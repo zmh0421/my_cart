@@ -1,13 +1,14 @@
 # Author: zmh0421@hotmail.com
 # File: cart
-# Created: 2022/11/21
-import json
+# 2022/11/21 created zmh0421@hotmail.com
+"""This module provides high-level interface  **create_cart** for user
+"""
 from jinja2 import Template
 from typing import Iterable
 from .calculator import Calculator, get_calculator
 from .product import Product
 from .error import ProductNotSupportError, ProductsNullError, CalculatorNotSupportError
-from ..settings import TEMPLATE_FILE, DATA_FILE, DEFAULT_EXPENSE_CALCULATORS, DEFAULT_DISCOUNT_CALCULATORS, logger
+from ..settings import TEMPLATE_FILE, DEFAULT_PRODUCTS, DEFAULT_EXPENSE_CALCULATORS, DEFAULT_DISCOUNT_CALCULATORS, logger
 
 
 class Cart:
@@ -16,6 +17,11 @@ class Cart:
                  products: Iterable = None,
                  expense_calculators: [Calculator] = None,
                  discount_calculators: [Calculator] = None):
+        """
+        :param products: list of products you want to add to the cart
+        :param expense_calculators:  list of calculators that increase the price of products
+        :param discount_calculators: list of calculators that decrease the price of products
+        """
         logger.debug(f"products:{products}")
         logger.debug(f"expense_calculators: {expense_calculators}")
         logger.debug(f"discount_calculators: {discount_calculators}")
@@ -49,16 +55,13 @@ class Cart:
         if products is None or len(products) == 0:
             raise ProductsNullError
             
-        with open(DATA_FILE) as data_file:
-            data = json.load(data_file)
-            product_data = data["products"]
         try:
-            return [Product(product, **product_data[product]) for product in products]
+            return [Product(product, **DEFAULT_PRODUCTS[product]) for product in products]
         except KeyError as e:
             raise ProductNotSupportError(product=e.args[0])
     
     @staticmethod
-    def __init_calculator(calculators: [str]):
+    def __init_calculator(calculators: [str]) -> [Calculator]:
         try:
             return [get_calculator(calculator) for calculator in calculators]
         except AttributeError as e:
@@ -73,12 +76,14 @@ class Cart:
         self._total_price = round(self._total_price, 4)
     
     @property
-    def output(self):
+    def output(self) -> str:
         with open(TEMPLATE_FILE) as f:
             template = Template(f.read())
             
         return template.render(expense_calculators=self._expense_calculators,
-                               discount_calculators=self._discount_calculators,
+                               discount_calculators=[discount_calculator for discount_calculator
+                                                     in self._discount_calculators
+                                                     if discount_calculator.price != 0],  # ignore ineligible discount
                                total_price=self._total_price)
     @property
     def total_price(self):
@@ -87,11 +92,12 @@ class Cart:
         
 @logger.catch()
 def create_cart(products) -> (bool, str):
+    """High-level interface for users to create cart simply
+    """
     try:
         cart = Cart(products)
         cart.calculate()
         print(cart.output)
-        return True, None
+        return True, cart.output
     except Exception as e:
-        logger.error(str(e))
-        return False, e.with_traceback()
+        return False, str(e)

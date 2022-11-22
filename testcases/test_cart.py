@@ -1,3 +1,5 @@
+# 2022/11/22 created zmh0421@hotmail.com
+
 import unittest
 from my_cart.core.cart import Cart, create_cart
 from my_cart.core.error import ProductNotSupportError, CalculatorNotSupportError, ProductsNullError
@@ -17,7 +19,7 @@ class CartTestCase(unittest.TestCase):
             Cart(None)
             
     def test_invalid_expense_calculators(self):
-        with self.assertRaises(CalculatorNotSupportError) as e:
+        with self.assertRaises(CalculatorNotSupportError) as _:
             Cart(['T-shirt'], expense_calculators=['a'])
 
     def test_invalid_discount_calculators(self):
@@ -30,14 +32,30 @@ class CartTestCase(unittest.TestCase):
         self.assertEqual(39.3286, cart.total_price)
         
     def test_create_cart(self):
-
-        create_cart(["T-shirt", "Blouse", "Pants", "Sweatpants", "Jacket", "Shoes"])
-        self.assertTrue(True)
+        success, _ = create_cart(["T-shirt", "Blouse", "Pants", "Sweatpants", "Jacket", "Shoes"])
+        self.assertTrue(success)
         
     def test_create_cart_error(self):
-        create_cart(["aa"])
+        success, _ = create_cart(["aa"])
+        self.assertFalse(success)
+
+    def test_discount_not_shown(self):
+        success, output = create_cart(["T-shirt"])
+        self.assertTrue(True, success)
+        self.assertNotIn('Discounts', output)
+
+    def test_discount_item_not_shown(self):
+        success, output = create_cart(["Shoes"])
+        self.assertTrue(True, success)
+        self.assertNotIn('50% off jacket', output)
+        self.assertNotIn('$10 of shipping', output)
+
+
+
+
+
+
         
-    
-    
+        
 if __name__ == '__main__':
     unittest.main()

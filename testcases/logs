@@ -251,3 +251,283 @@ Traceback (most recent call last):
     return False, e.with_traceback()
 
 TypeError: with_traceback() takes exactly one argument (0 given)
+2022-11-23 01:31:38.779 | DEBUG    | my_cart.core.cart:__init__:19 - products:['aa']
+2022-11-23 01:31:38.779 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:31:38.779 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:31:38.780 | ERROR    | my_cart.core.cart:create_cart:96 - Product 'aa' not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+2022-11-23 01:31:38.780 | ERROR    | test_cart:test_create_cart_error:40 - An error has been caught in function 'test_create_cart_error', process 'MainProcess' (65469), thread 'MainThread' (4576118272):
+Traceback (most recent call last):
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 56, in __init_products
+    return [Product(product, **product_data[product]) for product in products]
+            │                  │                                     └ ['aa']
+            │                  └ {'T-shirt': {'price': 30.99, 'shipped_from': 'US', 'weight': 0.2}, 'Blouse': {'price': 10.99, 'shipped_from': 'UK', 'weight':...
+            └ <class 'my_cart.core.product.Product'>
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 56, in <listcomp>
+    return [Product(product, **product_data[product]) for product in products]
+            │       │          │            │             └ 'aa'
+            │       │          │            └ 'aa'
+            │       │          └ {'T-shirt': {'price': 30.99, 'shipped_from': 'US', 'weight': 0.2}, 'Blouse': {'price': 10.99, 'shipped_from': 'UK', 'weight':...
+            │       └ 'aa'
+            └ <class 'my_cart.core.product.Product'>
+
+KeyError: 'aa'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 91, in create_cart
+    cart = Cart(products)
+           │    └ ['aa']
+           └ <class 'my_cart.core.cart.Cart'>
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 23, in __init__
+    self._products = self.__init_products(products)
+    │                │                    └ ['aa']
+    │                └ <my_cart.core.cart.Cart object at 0x7fb96c067f28>
+    └ <my_cart.core.cart.Cart object at 0x7fb96c067f28>
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 58, in __init_products
+    raise ProductNotSupportError(product=e.args[0])
+          └ <class 'my_cart.core.error.ProductNotSupportError'>
+
+my_cart.core.error.ProductNotSupportError: Product 'aa' not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/Applications/PyCharm CE.app/Contents/plugins/python-ce/helpers/pycharm/_jb_unittest_runner.py", line 35, in <module>
+    main(argv=args, module=None, testRunner=unittestpy.TeamcityTestRunner, buffer=not JB_DISABLE_BUFFERING)
+    │         │                             │          │                              └ False
+    │         │                             │          └ <class 'teamcity.unittestpy.TeamcityTestRunner'>
+    │         │                             └ <module 'teamcity.unittestpy' from '/Applications/PyCharm CE.app/Contents/plugins/python-ce/helpers/pycharm/teamcity/unittest...
+    │         └ ['python -m unittest', 'test_cart.CartTestCase.test_create_cart_error']
+    └ <class 'unittest.main.TestProgram'>
+
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/main.py", line 101, in __init__
+    self.runTests()
+    │    └ <function TestProgram.runTests at 0x7fb96abe3378>
+    └ <unittest.main.TestProgram object at 0x7fb96ab35a90>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+    │             │          │   │    └ <unittest.suite.TestSuite tests=[<unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>]>
+    │             │          │   └ <unittest.main.TestProgram object at 0x7fb96ab35a90>
+    │             │          └ <function TeamcityTestRunner.run at 0x7fb96aff4730>
+    │             └ <teamcity.unittestpy.TeamcityTestRunner object at 0x7fb96c08a550>
+    └ <unittest.main.TestProgram object at 0x7fb96ab35a90>
+
+  File "/Applications/PyCharm CE.app/Contents/plugins/python-ce/helpers/pycharm/teamcity/unittestpy.py", line 310, in run
+    return super(TeamcityTestRunner, self).run(test)
+                 │                   │         └ <unittest.suite.TestSuite tests=[<unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>]>
+                 │                   └ <teamcity.unittestpy.TeamcityTestRunner object at 0x7fb96c08a550>
+                 └ <class 'teamcity.unittestpy.TeamcityTestRunner'>
+
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/runner.py", line 176, in run
+    test(result)
+    │    └ <teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>
+    └ <unittest.suite.TestSuite tests=[<unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>]>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           │    │    │       └ {}
+           │    │    └ (<teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>,)
+           │    └ <function TestSuite.run at 0x7fb96af6b8c8>
+           └ <unittest.suite.TestSuite tests=[<unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>]>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/suite.py", line 122, in run
+    test(result)
+    │    └ <teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>
+    └ <unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           │    │    │       └ {}
+           │    │    └ (<teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>,)
+           │    └ <function TestSuite.run at 0x7fb96af6b8c8>
+           └ <unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/suite.py", line 122, in run
+    test(result)
+    │    └ <teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>
+    └ <test_cart.CartTestCase testMethod=test_create_cart_error>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 663, in __call__
+    return self.run(*args, **kwds)
+           │    │    │       └ {}
+           │    │    └ (<teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>,)
+           │    └ <function TestCase.run at 0x7fb96af679d8>
+           └ <test_cart.CartTestCase testMethod=test_create_cart_error>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 615, in run
+    testMethod()
+    └ <bound method CartTestCase.test_create_cart_error of <test_cart.CartTestCase testMethod=test_create_cart_error>>
+
+> File "/Users/cyouzhang/Project/Python/my_cart/testcases/test_cart.py", line 40, in test_create_cart_error
+    create_cart(["aa"])
+    └ <function create_cart at 0x7fb96e8e0268>
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 97, in create_cart
+    return False, e.with_traceback()
+
+TypeError: with_traceback() takes exactly one argument (0 given)
+2022-11-23 01:32:28.959 | DEBUG    | my_cart.core.cart:__init__:19 - products:['aa']
+2022-11-23 01:32:28.959 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:32:28.959 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:32:28.960 | ERROR    | test_cart:test_create_cart_error:40 - An error has been caught in function 'test_create_cart_error', process 'MainProcess' (65502), thread 'MainThread' (4559083008):
+Traceback (most recent call last):
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 56, in __init_products
+    return [Product(product, **product_data[product]) for product in products]
+            │                  │                                     └ ['aa']
+            │                  └ {'T-shirt': {'price': 30.99, 'shipped_from': 'US', 'weight': 0.2}, 'Blouse': {'price': 10.99, 'shipped_from': 'UK', 'weight':...
+            └ <class 'my_cart.core.product.Product'>
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 56, in <listcomp>
+    return [Product(product, **product_data[product]) for product in products]
+            │       │          │            │             └ 'aa'
+            │       │          │            └ 'aa'
+            │       │          └ {'T-shirt': {'price': 30.99, 'shipped_from': 'US', 'weight': 0.2}, 'Blouse': {'price': 10.99, 'shipped_from': 'UK', 'weight':...
+            │       └ 'aa'
+            └ <class 'my_cart.core.product.Product'>
+
+KeyError: 'aa'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 91, in create_cart
+    cart = Cart(products)
+           │    └ ['aa']
+           └ <class 'my_cart.core.cart.Cart'>
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 23, in __init__
+    self._products = self.__init_products(products)
+    │                │                    └ ['aa']
+    │                └ <my_cart.core.cart.Cart object at 0x7fad918db940>
+    └ <my_cart.core.cart.Cart object at 0x7fad918db940>
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 58, in __init_products
+    raise ProductNotSupportError(product=e.args[0])
+          └ <class 'my_cart.core.error.ProductNotSupportError'>
+
+my_cart.core.error.ProductNotSupportError: Product 'aa' not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/Applications/PyCharm CE.app/Contents/plugins/python-ce/helpers/pycharm/_jb_unittest_runner.py", line 35, in <module>
+    main(argv=args, module=None, testRunner=unittestpy.TeamcityTestRunner, buffer=not JB_DISABLE_BUFFERING)
+    │         │                             │          │                              └ False
+    │         │                             │          └ <class 'teamcity.unittestpy.TeamcityTestRunner'>
+    │         │                             └ <module 'teamcity.unittestpy' from '/Applications/PyCharm CE.app/Contents/plugins/python-ce/helpers/pycharm/teamcity/unittest...
+    │         └ ['python -m unittest', 'test_cart.CartTestCase.test_create_cart_error']
+    └ <class 'unittest.main.TestProgram'>
+
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/main.py", line 101, in __init__
+    self.runTests()
+    │    └ <function TestProgram.runTests at 0x7fad8d2e3378>
+    └ <unittest.main.TestProgram object at 0x7fad8d235a90>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/main.py", line 271, in runTests
+    self.result = testRunner.run(self.test)
+    │             │          │   │    └ <unittest.suite.TestSuite tests=[<unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>]>
+    │             │          │   └ <unittest.main.TestProgram object at 0x7fad8d235a90>
+    │             │          └ <function TeamcityTestRunner.run at 0x7fad8d6f4730>
+    │             └ <teamcity.unittestpy.TeamcityTestRunner object at 0x7fad8e98a518>
+    └ <unittest.main.TestProgram object at 0x7fad8d235a90>
+
+  File "/Applications/PyCharm CE.app/Contents/plugins/python-ce/helpers/pycharm/teamcity/unittestpy.py", line 310, in run
+    return super(TeamcityTestRunner, self).run(test)
+                 │                   │         └ <unittest.suite.TestSuite tests=[<unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>]>
+                 │                   └ <teamcity.unittestpy.TeamcityTestRunner object at 0x7fad8e98a518>
+                 └ <class 'teamcity.unittestpy.TeamcityTestRunner'>
+
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/runner.py", line 176, in run
+    test(result)
+    │    └ <teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>
+    └ <unittest.suite.TestSuite tests=[<unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>]>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           │    │    │       └ {}
+           │    │    └ (<teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>,)
+           │    └ <function TestSuite.run at 0x7fad8d66b8c8>
+           └ <unittest.suite.TestSuite tests=[<unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>]>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/suite.py", line 122, in run
+    test(result)
+    │    └ <teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>
+    └ <unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           │    │    │       └ {}
+           │    │    └ (<teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>,)
+           │    └ <function TestSuite.run at 0x7fad8d66b8c8>
+           └ <unittest.suite.TestSuite tests=[<test_cart.CartTestCase testMethod=test_create_cart_error>]>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/suite.py", line 122, in run
+    test(result)
+    │    └ <teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>
+    └ <test_cart.CartTestCase testMethod=test_create_cart_error>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 663, in __call__
+    return self.run(*args, **kwds)
+           │    │    │       └ {}
+           │    │    └ (<teamcity.unittestpy.TeamcityTestResult run=1 errors=0 failures=0>,)
+           │    └ <function TestCase.run at 0x7fad8d6679d8>
+           └ <test_cart.CartTestCase testMethod=test_create_cart_error>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 615, in run
+    testMethod()
+    └ <bound method CartTestCase.test_create_cart_error of <test_cart.CartTestCase testMethod=test_create_cart_error>>
+
+> File "/Users/cyouzhang/Project/Python/my_cart/testcases/test_cart.py", line 40, in test_create_cart_error
+    create_cart(["aa"])
+    └ <function create_cart at 0x7fad918e22f0>
+
+  File "/Users/cyouzhang/Project/Python/my_cart/my_cart/core/cart.py", line 96, in create_cart
+    logger.debug(e.with_traceback(tb=None))
+    │      └ <function Logger.debug at 0x7fad918be158>
+    └ <loguru.logger handlers=[(id=1, level=10, sink='logs'), (id=2, level=20, sink=<stdout>)]>
+
+TypeError: with_traceback() takes no keyword arguments
+2022-11-23 01:33:38.755 | DEBUG    | my_cart.core.cart:__init__:19 - products:['aa']
+2022-11-23 01:33:38.756 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:33:38.756 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:34:27.086 | DEBUG    | my_cart.core.cart:__init__:19 - products:['aa']
+2022-11-23 01:34:27.086 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:34:27.087 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:44:00.058 | DEBUG    | my_cart.core.cart:__init__:19 - products:['aa']
+2022-11-23 01:44:00.058 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:44:00.059 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:44:44.059 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes']
+2022-11-23 01:44:44.059 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:44:44.059 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:44:44.060 | DEBUG    | my_cart.core.cart:__init__:35 - [<my_cart.core.calculator.Subtotal object at 0x7fe7f18dca58>, <my_cart.core.calculator.Shipping object at 0x7fe7f18dca20>, <my_cart.core.calculator.VAT object at 0x7fe7f18dc9e8>]
+2022-11-23 01:44:44.060 | DEBUG    | my_cart.core.cart:__init__:36 - [<my_cart.core.calculator.ShoesDiscount object at 0x7fe7f18dc978>, <my_cart.core.calculator.JacketDiscount object at 0x7fe7f18dc9b0>, <my_cart.core.calculator.ShippingDiscount object at 0x7fe7f18dca90>]
+2022-11-23 01:44:44.070 | DEBUG    | my_cart.core.cart:__init__:19 - products:['aa']
+2022-11-23 01:44:44.070 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:44:44.070 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:44:44.071 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 01:44:44.071 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:44:44.071 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: ['a']
+2022-11-23 01:44:44.071 | ERROR    | my_cart.core.cart:__init_calculator:62 - module 'my_cart.core.calculator' has no attribute 'a'
+2022-11-23 01:44:44.072 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 01:44:44.072 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: ['a']
+2022-11-23 01:44:44.072 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:44:44.072 | ERROR    | my_cart.core.cart:__init_calculator:62 - module 'my_cart.core.calculator' has no attribute 'a'
+2022-11-23 01:44:44.072 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt', 'K']
+2022-11-23 01:44:44.073 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:44:44.073 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:44:44.073 | DEBUG    | my_cart.core.cart:__init__:19 - products:None
+2022-11-23 01:44:44.074 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:44:44.074 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:44:44.075 | DEBUG    | my_cart.core.cart:__init__:19 - products:[]
+2022-11-23 01:44:44.075 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:44:44.075 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:44:44.076 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 01:44:44.076 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 01:44:44.076 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 01:44:44.076 | DEBUG    | my_cart.core.cart:__init__:35 - [<my_cart.core.calculator.Subtotal object at 0x7fe7f18dce48>, <my_cart.core.calculator.Shipping object at 0x7fe7f18dcd30>, <my_cart.core.calculator.VAT object at 0x7fe7f18dce80>]
+2022-11-23 01:44:44.076 | DEBUG    | my_cart.core.cart:__init__:36 - [<my_cart.core.calculator.ShoesDiscount object at 0x7fe7f18dc780>, <my_cart.core.calculator.JacketDiscount object at 0x7fe7f18dcef0>, <my_cart.core.calculator.ShippingDiscount object at 0x7fe7f18f6358>]

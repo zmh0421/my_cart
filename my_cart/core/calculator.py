@@ -1,6 +1,6 @@
 # Author: zmh0421@hotmail.com
 # File: calculator
-# Created: 2022/11/21
+# 2022/11/21 created zmh0421@hotmail.com
 
 """This module contains different strategy of price calculation
 
@@ -12,7 +12,7 @@ import abc
 import sys
 import math
 from .product import Product, ItemType
-from ..settings import VAT_RATE, SHOE_DISCOUNT, JACKET_DISCOUNT, DECIMAL_PLACES, SHIPPING_RATES
+from ..settings import VAT_RATE, SHOE_DISCOUNT, JACKET_DISCOUNT, DECIMAL_PLACES, SHIPPING_RATES, DEFAULT_PRODUCTS
 
 
 class Calculator(abc.ABC):
@@ -22,16 +22,14 @@ class Calculator(abc.ABC):
     
     @abc.abstractmethod
     def calculate(self, products: [Product]):
+        """calculate the price with different rules
         """
-        :param products:
-        :return:
-        """
-        pass
     
     @property
     @abc.abstractmethod
     def name(self):
-        pass
+        """used for output
+        """
 
     @property
     def price(self):
@@ -41,10 +39,10 @@ class Calculator(abc.ABC):
 class Subtotal(Calculator):
     
     @property
-    def name(self):
+    def name(self) -> str:
         return "Subtotal"
     
-    def calculate(self, products: [Product]):
+    def calculate(self, products: [Product]) -> float:
         self._price = sum([item.price for item in products])
         return self.price
 
@@ -52,10 +50,10 @@ class Subtotal(Calculator):
 class Shipping(Calculator):
     
     @property
-    def name(self):
+    def name(self) -> str:
         return "Shipping"
     
-    def calculate(self, products: [Product]):
+    def calculate(self, products: [Product]) -> float:
         # Each country has a shipping rate per 100 grams
         self._price = sum([math.ceil(item.weight * 10) * SHIPPING_RATES[item.shipped_from] for item in products])
         return self.price
@@ -66,10 +64,10 @@ class VAT(Calculator):
     """
 
     @property
-    def name(self):
+    def name(self) -> str:
         return "VAT"
     
-    def calculate(self, products: [Product]):
+    def calculate(self, products: [Product]) -> float:
         self._price = sum([item.price * VAT_RATE for item in products])
         return self.price
 
@@ -79,10 +77,10 @@ class ShoesDiscount(Calculator):
     """
 
     @property
-    def name(self):
+    def name(self) -> str:
         return "10% off shoes"
     
-    def calculate(self, products: [Product]):
+    def calculate(self, products: [Product]) -> float:
         self._price = sum([item.price * SHOE_DISCOUNT
                            for item in products
                            if item.type == ItemType.Shoes])
@@ -94,10 +92,10 @@ class JacketDiscount(Calculator):
     """
 
     @property
-    def name(self):
+    def name(self) -> str:
         return "50% off jacket"
     
-    def calculate(self, products: [Product]):
+    def calculate(self, products: [Product]) -> float:
         top_count = 0
         jacket_price = 0
         
@@ -116,11 +114,13 @@ class JacketDiscount(Calculator):
 
 
 class ShippingDiscount(Calculator):
+    """Buy any two items or more and get a maximum of $10 off shipping fees
+    """
     @property
-    def name(self):
+    def name(self) -> str:
         return "$10 of shipping"
     
-    def calculate(self, products: [Product]):
+    def calculate(self, products: [Product]) -> float:
         if len(products) >= 2:
             self._price = min(10, Shipping.calculate(Shipping(), products))
         else:

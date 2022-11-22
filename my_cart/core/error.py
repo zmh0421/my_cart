@@ -1,6 +1,6 @@
 # Author: zmh0421@hotmail.com
 # File: error
-# Created: 2022/11/22
+# 2022/11/22 created zmh0421@hotmail.com
 
 """Custom Exception module
 NotSupportError: Base exception including the situation that some value from caller are not supported yet

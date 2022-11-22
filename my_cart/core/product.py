@@ -1,6 +1,6 @@
 # Author: zmh0421@hotmail.com
 # File: product
-# Created: 2022/11/22
+# 2022/11/22 created zmh0421@hotmail.com
 
 from dataclasses import dataclass
 
