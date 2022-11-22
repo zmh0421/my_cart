@@ -49,12 +49,6 @@ class CartTestCase(unittest.TestCase):
         self.assertTrue(True, success)
         self.assertNotIn('50% off jacket', output)
         self.assertNotIn('$10 of shipping', output)
-
-
-
-
-
-
         
         
 if __name__ == '__main__':

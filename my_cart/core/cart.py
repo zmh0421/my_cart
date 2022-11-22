@@ -100,4 +100,5 @@ def create_cart(products) -> (bool, str):
         print(cart.output)
         return True, cart.output
     except Exception as e:
+        logger.error(str(e))
         return False, str(e)
