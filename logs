@@ -1,0 +1,168 @@
+2022-11-22 21:57:22.399 | DEBUG    | my_cart.core.cart:__init__:17 - products:()
+2022-11-22 21:57:22.399 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 21:57:22.399 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:02:42.855 | DEBUG    | my_cart.core.cart:__init__:17 - products:()
+2022-11-22 22:02:42.855 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:02:42.855 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:02:42.856 | ERROR    | my_cart.core.cart:add_cart:96 - Products is Null, the process can not move forward
+2022-11-22 22:11:20.905 | DEBUG    | my_cart.core.cart:__init__:17 - products:()
+2022-11-22 22:11:20.905 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:11:20.905 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:11:20.906 | ERROR    | my_cart.core.cart:add_cart:96 - Products is Null, the process can not move forward
+2022-11-22 22:11:24.607 | DEBUG    | my_cart.core.cart:__init__:17 - products:()
+2022-11-22 22:11:24.607 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:11:24.607 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:11:24.608 | ERROR    | my_cart.core.cart:add_cart:96 - Products is Null, the process can not move forward
+2022-11-22 22:11:29.917 | DEBUG    | my_cart.core.cart:__init__:17 - products:()
+2022-11-22 22:11:29.917 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:11:29.917 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:11:29.917 | ERROR    | my_cart.core.cart:add_cart:96 - Products is Null, the process can not move forward
+2022-11-22 22:32:04.049 | DEBUG    | my_cart.core.cart:__init__:17 - products:()
+2022-11-22 22:32:04.050 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:32:04.050 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:32:04.050 | ERROR    | my_cart.core.cart:add_cart:96 - Products is Null, the process can not move forward
+2022-11-22 22:32:23.137 | DEBUG    | my_cart.core.cart:__init__:17 - products:('T-shirt',)
+2022-11-22 22:32:23.137 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:32:23.137 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:32:23.140 | DEBUG    | my_cart.core.cart:__init__:33 - [<my_cart.core.calculator.Subtotal object at 0x7fb7487a37f0>, <my_cart.core.calculator.Shipping object at 0x7fb748592d30>, <my_cart.core.calculator.VAT object at 0x7fb7491dc908>]
+2022-11-22 22:32:23.140 | DEBUG    | my_cart.core.cart:__init__:34 - [<my_cart.core.calculator.ShoesDiscount object at 0x7fb7491dcda0>, <my_cart.core.calculator.JacketDiscount object at 0x7fb7491dc978>, <my_cart.core.calculator.ShippingDiscount object at 0x7fb7491dce10>]
+2022-11-22 22:32:46.130 | DEBUG    | my_cart.core.cart:__init__:17 - products:('T-shirt',)
+2022-11-22 22:32:46.130 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:32:46.130 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:32:46.131 | DEBUG    | my_cart.core.cart:__init__:33 - [<my_cart.core.calculator.Subtotal object at 0x7f9eb5fa37f0>, <my_cart.core.calculator.Shipping object at 0x7f9eb5d92f28>, <my_cart.core.calculator.VAT object at 0x7f9eb7adc9b0>]
+2022-11-22 22:32:46.131 | DEBUG    | my_cart.core.cart:__init__:34 - [<my_cart.core.calculator.ShoesDiscount object at 0x7f9eb7adcd30>, <my_cart.core.calculator.JacketDiscount object at 0x7f9eb7adca20>, <my_cart.core.calculator.ShippingDiscount object at 0x7f9eb7adce10>]
+2022-11-22 22:32:55.623 | DEBUG    | my_cart.core.cart:__init__:17 - products:('T-shirt',)
+2022-11-22 22:32:55.623 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:32:55.623 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:32:55.623 | DEBUG    | my_cart.core.cart:__init__:33 - [<my_cart.core.calculator.Subtotal object at 0x7fda8b6a3710>, <my_cart.core.calculator.Shipping object at 0x7fda8b016c18>, <my_cart.core.calculator.VAT object at 0x7fda8b492f28>]
+2022-11-22 22:32:55.624 | DEBUG    | my_cart.core.cart:__init__:34 - [<my_cart.core.calculator.ShoesDiscount object at 0x7fda8c9db908>, <my_cart.core.calculator.JacketDiscount object at 0x7fda8c9dbd30>, <my_cart.core.calculator.ShippingDiscount object at 0x7fda8c9dba58>]
+2022-11-22 22:33:33.086 | DEBUG    | my_cart.core.cart:__init__:17 - products:('fdf',)
+2022-11-22 22:33:33.086 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:33:33.086 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:33:33.086 | ERROR    | my_cart.core.cart:add_cart:96 - fdf not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+2022-11-22 22:38:29.394 | DEBUG    | my_cart.core.cart:__init__:17 - products:('fdf',)
+2022-11-22 22:38:29.395 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:38:29.395 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:38:29.395 | ERROR    | my_cart.core.cart:add_cart:96 - product fdf not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+2022-11-22 22:38:40.085 | DEBUG    | my_cart.core.cart:__init__:17 - products:('fdf',)
+2022-11-22 22:38:40.085 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:38:40.085 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:38:40.085 | ERROR    | my_cart.core.cart:add_cart:96 - product 'fdf' not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+2022-11-22 22:38:48.589 | DEBUG    | my_cart.core.cart:__init__:17 - products:('fdf',)
+2022-11-22 22:38:48.589 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:38:48.589 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:38:48.589 | ERROR    | my_cart.core.cart:add_cart:96 - Product 'fdf' not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+2022-11-22 22:39:42.800 | DEBUG    | my_cart.core.cart:__init__:17 - products:('a',)
+2022-11-22 22:39:42.800 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:39:42.800 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:39:42.800 | ERROR    | my_cart.core.cart:add_cart:96 - Product 'a' not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+2022-11-22 22:44:26.524 | DEBUG    | my_cart.core.cart:__init__:17 - products:('a',)
+2022-11-22 22:44:26.524 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:44:26.524 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:44:26.524 | ERROR    | my_cart.core.cart:add_cart:97 - Product 'a' not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+2022-11-22 22:45:17.075 | DEBUG    | my_cart.core.cart:__init__:17 - products:('a',)
+2022-11-22 22:45:17.075 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:45:17.075 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:45:17.075 | ERROR    | my_cart.core.cart:add_cart:97 - Product 'a' not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+2022-11-22 22:45:20.795 | DEBUG    | my_cart.core.cart:__init__:17 - products:('a',)
+2022-11-22 22:45:20.796 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:45:20.796 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:45:20.796 | ERROR    | my_cart.core.cart:add_cart:97 - Product 'a' not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+2022-11-22 22:45:26.605 | DEBUG    | my_cart.core.cart:__init__:17 - products:('a',)
+2022-11-22 22:45:26.605 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:45:26.605 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:45:26.606 | ERROR    | my_cart.core.cart:add_cart:97 - Product 'a' not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+2022-11-22 22:45:40.496 | DEBUG    | my_cart.core.cart:__init__:17 - products:('a',)
+2022-11-22 22:45:40.496 | DEBUG    | my_cart.core.cart:__init__:18 - expense_calculators: None
+2022-11-22 22:45:40.496 | DEBUG    | my_cart.core.cart:__init__:19 - discount_calculators: None
+2022-11-22 22:45:40.497 | ERROR    | my_cart.core.cart:add_cart:97 - Product 'a' not in ['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes'] range
+2022-11-23 00:04:29.289 | DEBUG    | my_cart.core.cart:__init__:19 - products:('T-shirt',)
+2022-11-23 00:04:29.289 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:04:29.289 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:04:29.289 | ERROR    | my_cart.core.cart:add_cart:94 - [Errno 2] No such file or directory: '/Users/cyouzhang/Project/Python/my_cart/venv/lib/python3.7/site-packages/my_cart/core/resources/data.json'
+2022-11-23 00:05:01.155 | DEBUG    | my_cart.core.cart:__init__:19 - products:('T-shirt',)
+2022-11-23 00:05:01.156 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:05:01.156 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:05:01.156 | DEBUG    | my_cart.core.cart:__init__:35 - [<my_cart.core.calculator.Subtotal object at 0x7fbd59c6f978>, <my_cart.core.calculator.Shipping object at 0x7fbd59c6fc18>, <my_cart.core.calculator.VAT object at 0x7fbd59c6f828>]
+2022-11-23 00:05:01.157 | DEBUG    | my_cart.core.cart:__init__:36 - [<my_cart.core.calculator.ShoesDiscount object at 0x7fbd59c6fc88>, <my_cart.core.calculator.JacketDiscount object at 0x7fbd59c6fcc0>, <my_cart.core.calculator.ShippingDiscount object at 0x7fbd59c6fcf8>]
+2022-11-23 00:16:53.887 | DEBUG    | my_cart.core.cart:__init__:19 - products:('T-shirt', 'Blouse', 'Pants', 'Shoes', 'Jacket')
+2022-11-23 00:16:53.887 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:16:53.887 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:16:53.888 | DEBUG    | my_cart.core.cart:__init__:35 - [<my_cart.core.calculator.Subtotal object at 0x7fbfd1f8bba8>, <my_cart.core.calculator.Shipping object at 0x7fbfd3af01d0>, <my_cart.core.calculator.VAT object at 0x7fbfd3c9c828>]
+2022-11-23 00:16:53.888 | DEBUG    | my_cart.core.cart:__init__:36 - [<my_cart.core.calculator.ShoesDiscount object at 0x7fbfd3c9c908>, <my_cart.core.calculator.JacketDiscount object at 0x7fbfd3c9ce10>, <my_cart.core.calculator.ShippingDiscount object at 0x7fbfd3c9ce80>]
+2022-11-23 00:20:45.638 | DEBUG    | my_cart.core.cart:__init__:19 - products:('T-shirt', 'Blouse', 'Pants', 'Shoes', 'Jacket')
+2022-11-23 00:20:45.638 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:20:45.639 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:20:45.639 | DEBUG    | my_cart.core.cart:__init__:35 - [<my_cart.core.calculator.Subtotal object at 0x7fefe985ee48>, <my_cart.core.calculator.Shipping object at 0x7fefe985ed68>, <my_cart.core.calculator.VAT object at 0x7fefe985edd8>]
+2022-11-23 00:20:45.639 | DEBUG    | my_cart.core.cart:__init__:36 - [<my_cart.core.calculator.ShoesDiscount object at 0x7fefe985ee10>, <my_cart.core.calculator.JacketDiscount object at 0x7fefe986f550>, <my_cart.core.calculator.ShippingDiscount object at 0x7fefe986f358>]
+2022-11-23 00:23:41.010 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 00:23:41.010 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:23:41.011 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:23:41.011 | DEBUG    | my_cart.core.cart:__init__:35 - [<my_cart.core.calculator.Subtotal object at 0x7fb214120e10>, <my_cart.core.calculator.Shipping object at 0x7fb214120fd0>, <my_cart.core.calculator.VAT object at 0x7fb214120e48>]
+2022-11-23 00:23:41.012 | DEBUG    | my_cart.core.cart:__init__:36 - [<my_cart.core.calculator.ShoesDiscount object at 0x7fb214120eb8>, <my_cart.core.calculator.JacketDiscount object at 0x7fb214120dd8>, <my_cart.core.calculator.ShippingDiscount object at 0x7fb214120ef0>]
+2022-11-23 00:23:41.012 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 00:23:41.012 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:23:41.012 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: ['a']
+2022-11-23 00:23:41.012 | ERROR    | my_cart.core.cart:__init_calculator:65 - module 'my_cart.core.calculator' has no attribute 'a'
+2022-11-23 00:23:41.013 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 00:23:41.013 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: ['a']
+2022-11-23 00:23:41.013 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:23:41.013 | ERROR    | my_cart.core.cart:__init_calculator:65 - module 'my_cart.core.calculator' has no attribute 'a'
+2022-11-23 00:23:41.014 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt', 'K']
+2022-11-23 00:23:41.014 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:23:41.014 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:23:41.014 | DEBUG    | my_cart.core.cart:__init__:19 - products:None
+2022-11-23 00:23:41.014 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:23:41.014 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:23:41.015 | DEBUG    | my_cart.core.cart:__init__:19 - products:[]
+2022-11-23 00:23:41.015 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:23:41.015 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:26:15.759 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 00:26:15.759 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:26:15.760 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:26:15.760 | DEBUG    | my_cart.core.cart:__init__:35 - [<my_cart.core.calculator.Subtotal object at 0x7fc5cb320f60>, <my_cart.core.calculator.Shipping object at 0x7fc5cb320f98>, <my_cart.core.calculator.VAT object at 0x7fc5cb320ef0>]
+2022-11-23 00:26:15.761 | DEBUG    | my_cart.core.cart:__init__:36 - [<my_cart.core.calculator.ShoesDiscount object at 0x7fc5cb320fd0>, <my_cart.core.calculator.JacketDiscount object at 0x7fc5c9d15d30>, <my_cart.core.calculator.ShippingDiscount object at 0x7fc5cb336588>]
+2022-11-23 00:26:15.761 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 00:26:15.761 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:26:15.761 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: ['a']
+2022-11-23 00:26:15.762 | ERROR    | my_cart.core.cart:__init_calculator:65 - module 'my_cart.core.calculator' has no attribute 'a'
+2022-11-23 00:26:15.762 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 00:26:15.762 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: ['a']
+2022-11-23 00:26:15.762 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:26:15.762 | ERROR    | my_cart.core.cart:__init_calculator:65 - module 'my_cart.core.calculator' has no attribute 'a'
+2022-11-23 00:26:15.763 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt', 'K']
+2022-11-23 00:26:15.763 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:26:15.763 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:26:15.763 | DEBUG    | my_cart.core.cart:__init__:19 - products:None
+2022-11-23 00:26:15.763 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:26:15.764 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:26:15.764 | DEBUG    | my_cart.core.cart:__init__:19 - products:[]
+2022-11-23 00:26:15.764 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:26:15.764 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:31:29.821 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt', 'Blouse', 'Pants', 'Sweatpants', 'Jacket', 'Shoes']
+2022-11-23 00:31:29.821 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:31:29.822 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:31:29.822 | DEBUG    | my_cart.core.cart:__init__:35 - [<my_cart.core.calculator.Subtotal object at 0x7fc198b60f98>, <my_cart.core.calculator.Shipping object at 0x7fc198b77668>, <my_cart.core.calculator.VAT object at 0x7fc198b77048>]
+2022-11-23 00:31:29.823 | DEBUG    | my_cart.core.cart:__init__:36 - [<my_cart.core.calculator.ShoesDiscount object at 0x7fc198b77470>, <my_cart.core.calculator.JacketDiscount object at 0x7fc198b77518>, <my_cart.core.calculator.ShippingDiscount object at 0x7fc198b775c0>]
+2022-11-23 00:31:29.830 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 00:31:29.830 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:31:29.831 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: ['a']
+2022-11-23 00:31:29.831 | ERROR    | my_cart.core.cart:__init_calculator:65 - module 'my_cart.core.calculator' has no attribute 'a'
+2022-11-23 00:31:29.831 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 00:31:29.831 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: ['a']
+2022-11-23 00:31:29.831 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:31:29.832 | ERROR    | my_cart.core.cart:__init_calculator:65 - module 'my_cart.core.calculator' has no attribute 'a'
+2022-11-23 00:31:29.832 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt', 'K']
+2022-11-23 00:31:29.832 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:31:29.832 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:31:29.833 | DEBUG    | my_cart.core.cart:__init__:19 - products:None
+2022-11-23 00:31:29.833 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:31:29.833 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:31:29.833 | DEBUG    | my_cart.core.cart:__init__:19 - products:[]
+2022-11-23 00:31:29.833 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:31:29.833 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:31:29.833 | DEBUG    | my_cart.core.cart:__init__:19 - products:['T-shirt']
+2022-11-23 00:31:29.834 | DEBUG    | my_cart.core.cart:__init__:20 - expense_calculators: None
+2022-11-23 00:31:29.834 | DEBUG    | my_cart.core.cart:__init__:21 - discount_calculators: None
+2022-11-23 00:31:29.834 | DEBUG    | my_cart.core.cart:__init__:35 - [<my_cart.core.calculator.Subtotal object at 0x7fc198b77e48>, <my_cart.core.calculator.Shipping object at 0x7fc198b77240>, <my_cart.core.calculator.VAT object at 0x7fc198b77f28>]
+2022-11-23 00:31:29.834 | DEBUG    | my_cart.core.cart:__init__:36 - [<my_cart.core.calculator.ShoesDiscount object at 0x7fc198b77e80>, <my_cart.core.calculator.JacketDiscount object at 0x7fc198b77e10>, <my_cart.core.calculator.ShippingDiscount object at 0x7fc198b77dd8>]

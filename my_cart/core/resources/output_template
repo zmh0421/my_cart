@@ -1,0 +1,5 @@
+{% if expense_calculators|length()>0 %}{% for calculator in expense_calculators %}
+{{ calculator.name }}: ${{ calculator.price }}{% endfor %}{% endif %}
+{% if discount_calculators|length()>0 %}Discounts:{% for calculator in discount_calculators %}
+        {{ calculator.name }}: -${{ calculator.price }}{% endfor %}
+{% endif %}Total: ${{ total_price }}
