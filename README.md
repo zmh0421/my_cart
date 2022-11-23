@@ -58,23 +58,26 @@ The architecture would be like as the following picture
 
 THe file structure would be like this
 ```shell script
-������ README.md
-������ cli.py  # command line interface for user
-������ my_cart
-��?? ������ core
-��?? ��?? ������ calculator.py  # calculator module
-��?? ��?? ������ cart.py  # cart module
-��?? ��?? ������ error.py  # custom exception
-��?? ��?? ������ product.py # product module
-��?? ��?? ������ resources
-��?? ��??     ������ output_template  # for command line output
-��?? ������ settings.py  # default(global) settings or config
-������ requirements.txt
-������ setup.py
-������ testcases
-    ������ data.json
-    ������ test_cart.py
-    ������ test_template.py
+├── README.md
+├── cli.py  # command line interface for user
+├── my_cart
+│   ├── __init__.py
+│   ├── core
+│   │   ├── __init__.py
+│   │   ├── calculator.py  # calculator module
+│   │   ├── cart.py  # cart module
+│   │   ├── error.py  # custom exception
+│   │   ├── product.py  # product module
+│   │   └── resources
+│   │       └── output_template  # for command line output
+│   └── settings.py  # default(global) settings or config
+├── requirements.txt
+├── setup.py
+└── testcases
+    ├── __init__.py
+    ├── data.json
+    ├── test_cart.py
+    └── test_template.py
 ```
 
 ## Modules
